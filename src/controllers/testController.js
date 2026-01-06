@@ -1,4 +1,3 @@
-console.log("TEST CONTROLLER LOADED");
 
 export const rootOnly = (req, res) => {
   res.json({ message: "Welcome Root Admin" });
