@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 const orderSchema = new mongoose.Schema(
   {
+<<<<<<< HEAD
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
@@ -9,6 +10,9 @@ const orderSchema = new mongoose.Schema(
     },
 
     items: [
+=======
+    products: [
+>>>>>>> 5b738b36991f8f7182b4bd3c805e368a3b628b26
       {
         product: {
           type: mongoose.Schema.Types.ObjectId,
@@ -34,6 +38,7 @@ const orderSchema = new mongoose.Schema(
 
     status: {
       type: String,
+<<<<<<< HEAD
       enum: ["PLACED", "SHIPPED", "DELIVERED", "CANCELLED"],
       default: "PLACED",
     },
@@ -53,6 +58,17 @@ const orderSchema = new mongoose.Schema(
       required: true
     }
 
+=======
+      enum: ["PENDING", "SHIPPED", "DELIVERED", "CANCELLED"],
+      default: "PENDING",
+    },
+
+    createdBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Admin",
+      required: true,
+    },
+>>>>>>> 5b738b36991f8f7182b4bd3c805e368a3b628b26
   },
   { timestamps: true }
 );

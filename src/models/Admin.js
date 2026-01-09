@@ -1,6 +1,9 @@
 import mongoose from "mongoose";
+<<<<<<< HEAD
 import bcrypt from "bcryptjs";
 
+=======
+>>>>>>> 5b738b36991f8f7182b4bd3c805e368a3b628b26
 
 const adminSchema = new mongoose.Schema(
   {
@@ -17,8 +20,12 @@ const adminSchema = new mongoose.Schema(
     },
     password: {
       type: String,
+<<<<<<< HEAD
       required: true,
       select: false
+=======
+      required: true
+>>>>>>> 5b738b36991f8f7182b4bd3c805e368a3b628b26
     },
     role: {
       type: String,
@@ -28,13 +35,18 @@ const adminSchema = new mongoose.Schema(
     isActive: {
       type: Boolean,
       default: true
+<<<<<<< HEAD
     },
 
 
+=======
+    }
+>>>>>>> 5b738b36991f8f7182b4bd3c805e368a3b628b26
   },
   { timestamps: true }
 );
 
+<<<<<<< HEAD
 // HASH PASSWORD BEFORE SAVE
 adminSchema.pre("save", async function () {
   if (!this.isModified("password")) return;
@@ -48,5 +60,7 @@ adminSchema.methods.matchPassword = async function (enteredPassword) {
 };
 
 
+=======
+>>>>>>> 5b738b36991f8f7182b4bd3c805e368a3b628b26
 export default mongoose.model("Admin", adminSchema);
 
